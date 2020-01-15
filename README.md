@@ -7,4 +7,8 @@ It is a command line project with only two files: the Qmake project file and 'ma
     DUMPCPP=$$absolute_path("dumpcpp.exe", $$dirname(QMAKE_QMAKE))
     TYPELIBS = $$system($$DUMPCPP -getfile {00020905-0000-0000-C000-000000000046})
 
+To obtain the Guid of a type library, you may want to use the ['oleview.exe' utility](https://docs.microsoft.com/en-us/windows/win32/com/ole-com-object-viewer) to explore the libraries installed in your Windows box.
+
+![oleview.exe image](oleview.png)
+
 The main() function #includes the generated header "MSWORD.h", creates a new document, populates its contents with two text lines, and saves this document twice: the first time in the modern DOCX format, and again in the DOC format compatible with Word 97/2003.
